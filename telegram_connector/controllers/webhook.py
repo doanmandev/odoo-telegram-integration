@@ -47,7 +47,7 @@ class TelegramWebhook(http.Controller):
             # Check important data
             if not (chat_fields["usr_chat_id"] and text and user_fields["bot_id"]):
                 _logger.warning(
-                    "Invalid message format (missing chat_id, text hoặc user_id): chat_id: %s, text: %s, user_id: %s",
+                    "Invalid message format (missing chat_id, text or bot_id): chat_id: %s, text: %s, bot_id: %s",
                     chat_fields["usr_chat_id"], text, user_fields["bot_id"]
                 )
                 return {'status': 'error', 'message': 'Invalid message format'}
