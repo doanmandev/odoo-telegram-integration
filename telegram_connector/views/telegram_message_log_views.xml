@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Views -->
+    <record id="view_telegram_message_log_tree" model="ir.ui.view">
+        <field name="name">telegram.message.log.tree</field>
+        <field name="model">telegram.message.log</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="telegram_config_id" optional="hide"/>
+                <field name="message"/>
+                <field name="chat_id"/>
+                <field name="bot_id"/>
+                <field name="direction" optional="hide"/>
+                <field name="status" optional="hide"/>
+                <field name="formatted_date" invisible="1"/>
+                <field name="create_date" optional="hide"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_telegram_message_log_form" model="ir.ui.view">
+        <field name="name">telegram.message.log.form</field>
+        <field name="model">telegram.message.log</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="telegram_config_id"/>
+                            <field name="is_bot"/>
+                            <field name="message"/>
+                        </group>
+                        <group>
+                            <field name="direction"/>
+                            <field name="status"/>
+                            <field name="formatted_date" invisible="1"/>
+                            <field name="create_date" invisible="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="User (Chat)" name="usr">
+                            <group>
+                                <group>
+                                    <field name="chat_id" string="User Chat ID"/>
+                                    <field name="chat_type" string="Chat Type"/>
+                                </group>
+                                <group>
+                                    <field name="username" string="Username"/>
+                                    <field name="first_name" string="First Name"/>
+                                    <field name="last_name" string="Last Name"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Chatbot (From)" name="chatbot">
+                            <group>
+                                <group>
+                                    <field name="bot_id" string="Bot ID"/>
+                                </group>
+                                <group>
+                                    <field name="bot_username" string="Bot Username"/>
+                                    <field name="bot_first_name" string="Bot First Name"/>
+                                    <field name="bot_last_name" string="Bot Last Name"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Response" name="resp">
+                            <field name="response"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- Actions -->
+    <record id="telegram_message_sent_log_action" model="ir.actions.act_window">
+        <field name="name">Message sent Log</field>
+        <field name="res_model">telegram.message.log</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('direction', '=', 'out')]</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Message log is not found.
+            </p>
+        </field>
+    </record>
+
+    <record id="telegram_message_received_log_action" model="ir.actions.act_window">
+        <field name="name">Message received Log</field>
+        <field name="res_model">telegram.message.log</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('direction', '=', 'in')]</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Message log is not found.
+            </p>
+        </field>
+    </record>
+
+    <!-- Menu -->
+    <menuitem id="menu_telegram_message_log"
+        name="Message Log"
+        parent="telegram_connector.menu_telegram_integration_root"
+        sequence="2"/>
+
+    <menuitem id="menu_message_sent_log"
+        name="Sent Log"
+        parent="telegram_connector.menu_telegram_message_log"
+        action="telegram_message_sent_log_action"
+        sequence="1"/>
+
+    <menuitem id="menu_message_received_log"
+        name="Received Log"
+        parent="telegram_connector.menu_telegram_message_log"
+        action="telegram_message_received_log_action"
+        sequence="2"/>
+
+</odoo>

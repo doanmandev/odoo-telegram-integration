@@ -1,0 +1,188 @@
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan">Telegram Connector for Odoo</h2>
+        <h3 class="oe_slogan">Seamless Integration with Telegram Bot API for Real-time Communication</h3>
+        <h4 class="oe_slogan" style="font-size: 23px;">Doan Man -
+            <a href='https://github.com/doanmandev'>Github</a></h4>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="text-justify" style="max-width: 84%; margin: 16px 8%;">
+            <h3 class="oe_slogan">Overview</h3>
+            <p class="oe_mt32 text-justify">
+                Telegram Connector is a powerful Odoo module designed to establish bidirectional communication between your Odoo instance and Telegram users through the Telegram Bot API. This module provides a complete webhook-based implementation for receiving and processing messages from Telegram, with message persistence, chat management, and a user-friendly interface to monitor and control your Telegram integrations.
+            </p>
+            <div class="oe_centered">
+                <img class="oe_picture oe_screenshot" src="telegram_architecture.png" alt="Telegram Architecture">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <div class="text-justify" style="max-width: 84%; margin: 16px 8%;">
+            <h3 class="oe_slogan">Key Features</h3>
+            <div class="oe_span6">
+                <div class="oe_row_img oe_centered">
+                    <img class="oe_picture" src="telegram_features.png" alt="Telegram Key Features">
+                </div>
+            </div>
+            <div class="oe_span6">
+                <p class="oe_mt32">
+                    <ul>
+                        <li><strong>Webhook Integration:</strong> Receives real-time updates from Telegram using webhooks</li>
+                        <li><strong>Message History:</strong> Records all sent and received Telegram messages for traceability and debugging</li>
+                        <li><strong>Multi-Bot Support:</strong> Configure and manage multiple Telegram bots from a single interface</li>
+                        <li><strong>User-friendly Interface:</strong> Control and monitor Telegram communications directly from the Odoo UI</li>
+                        <li><strong>Two-way Communication:</strong> Both receive messages from and send responses to Telegram users</li>
+                        <li><strong>Detailed Message Logs:</strong> Comprehensive logging of message details, chat information, and user data</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="text-justify" style="max-width: 84%; margin: 16px 8%;">
+            <h3 class="oe_slogan">Technical Specifications</h3>
+            <p class="oe_mt32 text-justify">
+                <ul>
+                    <li><strong>Webhook Endpoint:</strong> /telegram/webhook</li>
+                    <li><strong>Authentication:</strong> Bot tokens and chat IDs for secure communication</li>
+                    <li><strong>Message Direction:</strong> Supports both incoming (received) and outgoing (sent) messages</li>
+                    <li><strong>Record Keeping:</strong> Detailed tracking of message content, user details, and timestamps</li>
+                    <li><strong>JSON Processing:</strong> Built-in utilities for handling Telegram API JSON responses</li>
+                    <li><strong>Dependencies:</strong> Base Odoo and requests library</li>
+                </ul>
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <div class="text-justify" style="max-width: 84%; margin: 16px 8%;">
+            <h3 class="oe_slogan">Requirements</h3>
+            <p class="oe_mt32 text-justify">
+                For the proper functioning of this module, you need:
+                <ul>
+                    <li>
+                        <p>
+                            <strong>Requests Library:</strong> <br>
+                            <span style='padding-left:5em'>
+                                A Python library for making HTTP requests. Usually comes pre-installed with Odoo, but can be installed via pip if needed:
+                                <code>pip install requests</code>
+                                (Official site: <a href="https://docs.python-requests.org/" target="_blank">https://docs.python-requests.org/</a>)
+                            </span>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <strong>Telegram Bot:</strong> <br>
+                            <span style='padding-left:5em'>
+                                You need to create a Telegram bot through BotFather and obtain a bot token.
+                                For instructions, visit <a href='https://core.telegram.org/bots#creating-a-new-bot' target="_blank">Telegram Bot Documentation</a>
+                            </span>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <strong>Public-facing Server:</strong> <br>
+                            <span style='padding-left:5em'>
+                                For webhook functionality, your Odoo server must be accessible from the internet with a valid domain or IP.
+                            </span>
+                        </p>
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h3 class="oe_slogan">Installation & Configuration</h3>
+        <div>
+            <p class="oe_mt32 text-justify">
+                <ol>
+                    <li>Install this module (telegram_connector) through Odoo's app management interface</li>
+                    <li>Create and configure your Telegram bot in the Telegram Configuration menu</li>
+                    <li>Set up the webhook URL in Telegram by calling the Telegram API:<br>
+                        <code>https://api.telegram.org/bot&lt;BOT_TOKEN&gt;/setWebhook?url=https://yourodoodomain.com/telegram/webhook</code></li>
+                    <li>Test your configuration by sending a test message using the "Send Message Test" button</li>
+                    <li>Monitor incoming and outgoing messages through the Message Log interface</li>
+                </ol>
+            </p>
+            <div class="oe_centered">
+                <img class="oe_picture oe_screenshot" src="telegram_interface.png" alt="Telegram Interface Screenshot">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <div class="text-justify" style="max-width: 84%; margin: 16px 8%;">
+            <h3 class="oe_slogan">Use Cases</h3>
+            <p class="oe_mt32 text-justify">
+                <ul>
+                    <li><strong>Customer Support:</strong> Provide customer service through Telegram messaging</li>
+                    <li><strong>Notification System:</strong> Send automated notifications about orders, shipments, or other events</li>
+                    <li><strong>Lead Generation:</strong> Capture leads through Telegram conversations</li>
+                    <li><strong>Internal Communication:</strong> Connect Odoo with company Telegram groups for internal updates</li>
+                    <li><strong>Order Placement:</strong> Allow customers to place orders directly through Telegram</li>
+                    <li><strong>Status Updates:</strong> Provide order status updates or inventory information via chat</li>
+                </ul>
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="text-justify" style="max-width: 84%; margin: 16px 8%;">
+            <h3 class="oe_slogan">Module Structure</h3>
+            <p class="oe_mt32 text-justify">
+                <ul>
+                    <li><strong>Telegram Configuration (telegram.config):</strong> Manage Telegram bot settings and API tokens</li>
+                    <li><strong>Message Log (telegram.message.log):</strong> Comprehensive log of all Telegram communications</li>
+                    <li><strong>Webhook Controller:</strong> Handles incoming webhook requests from Telegram</li>
+                    <li><strong>Utility Functions:</strong> Helper methods for processing Telegram data and responses</li>
+                </ul>
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <div class="text-justify" style="max-width: 84%; margin: 16px 8%;">
+            <h3 class="oe_slogan">Security Considerations</h3>
+            <p class="oe_mt32 text-justify">
+                <ul>
+                    <li>Bot tokens are stored securely in the Odoo database</li>
+                    <li>The webhook endpoint requires proper validation of incoming data</li>
+                    <li>Access to message logs and configuration is controlled by Odoo's security model</li>
+                    <li>We recommend using HTTPS for all communications to ensure secure data transfer</li>
+                </ul>
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="text-justify" style="max-width: 84%; margin: 16px 8%;">
+            <h3 class="oe_slogan">Support & Development</h3>
+            <p class="oe_mt32 text-justify">
+                For any questions, bug reports, or customization requests, please contact the author.<br/>
+                Want to extend this module? Check our comprehensive documentation for details on the module architecture and APIs.
+            </p>
+        </div>
+    </div>
+</section>
