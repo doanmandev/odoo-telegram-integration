@@ -2,7 +2,7 @@
 
 Seamless integration between **Odoo ERP** and **Telegram Bot API** for real-time messaging, automation, and interaction with users and customers directly from your ERP.
 
-![Odoo + Telegram](https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg) <!-- Replace with your own repo image if needed -->
+![Odoo + Telegram](https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/300px-Telegram_logo.svg.png) <!-- Replace with your own repo image if needed -->
 
 ---
 
